@@ -1,0 +1,257 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --color-primary: rgba(243, 245, 252, 1);
+    --color-secondary: rgba(10, 56, 113, 1);
+    --color-thirty: rgba(73, 80, 87, 1);
+    --color-forthy: rgb(255, 255, 255);
+}
+
+
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--color-primary);
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    border-radius: 0px 0px 16px 16px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 16px;
+}
+
+.main__input {
+    width: 100%;
+}
+
+.main__input textarea {
+    background-color: var(--color-primary);
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 12em;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3rem;
+    text-align: left;
+    color: var(--color-secondary);
+}
+
+.main__input textarea::placeholder {
+    color: var(--color-secondary);
+}
+
+.main__info {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+}
+
+.main__info__incognita {
+    display: flex;
+    align-items: center;
+}
+
+.main__info__texto>p {
+    color: var(--color-thirty);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+}
+
+.main__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.main__buttons>.main__buttons__encriptar,
+.main__buttons__desencriptar {
+    border: none;
+    border-radius: 24px;
+    height: 67px;
+    line-height: 19px;
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.main__buttons .main__buttons__encriptar {
+    background-color: var(--color-secondary);
+    color: var(--color-forthy);
+}
+
+.main__buttons .main__buttons__encriptar:hover {
+    background-color: #052051;
+}
+
+.main__buttons .main__buttons__desencriptar {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+}
+
+.main__buttons .main__buttons__desencriptar:hover {
+    background-color: #e6e9ed;
+}
+
+.main__card {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    width: 100%;
+    height: auto;
+    padding: 32px;
+    gap: 2rem;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    background-color: var(--color-forthy);
+}
+
+.main__card>.main__card__img {
+    display: none;
+}
+
+
+.main__card>.main__card__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: #343A40;
+
+}
+
+.main__card>.main__card__content {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+}
+
+.main__card>.main__card__content__p {
+    justify-content: flex-start;
+    align-self: flex-start;
+}
+
+.main__card>.main__card__encriptado {
+    text-align: start;
+}
+
+.main__card>.main__card__button__copiar {
+    display: none;
+    border-radius: 24px;
+    border: 2px solid var(--color-secondary);
+    height: 67px;
+    width: 100%;
+    line-height: 19px;
+    font-weight: 400;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    align-self: center;
+}
+
+.main__card .main__card__button__copiar:hover {
+    background-color: #e6e9ed;
+}
+
+
+
+/* Display tablets */
+@media screen and (min-width: 768px) {
+    header {
+        padding: 4.5rem 2.5rem;
+    }
+
+    main {
+        margin: 0 2.5rem;
+    }
+
+    .main__input textarea {
+        height: 16em;
+    }
+
+    .main__buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .main__buttons>.main__buttons__encriptar,
+    .main__buttons__desencriptar {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    header {
+        padding: 2.5rem 5.25rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        grid-template-rows: 0.9fr 0.1fr 0.2fr;
+        margin: 0 5.25rem;
+    }
+
+    .main__input {
+        padding: 0 7.8rem;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .main__input textarea {
+        height: 15em;
+    }
+
+    .main__info {
+        padding: 0 7.8rem;
+        grid-row: 2/3;
+        grid-column: 1/2;
+        align-self: end;
+    }
+
+    .main__buttons {
+        padding: 0 7.8rem;
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .main__card {
+        height: 100%;
+        width: 90%;
+        grid-column: 2/3;
+        grid-row: 1/4;
+        justify-content: center;
+    }
+
+    .main__card>.main__card__img {
+        display: block;
+    }
+
+}
